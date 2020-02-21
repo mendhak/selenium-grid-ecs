@@ -22,6 +22,12 @@ variable subnet_private_ids {
   default = ["subnet-3333333333"]
 }
 
+variable your_ip_addresses {
+  type = list(string)
+  description = "Change this to your own IP address. Only use 0.0.0.0 for temporary testing"
+  default = ["0.0.0.0/0"]
+}
+
 
 data "aws_vpc" "your_vpc" {
   id = var.vpc_id
@@ -40,7 +46,7 @@ resource "aws_security_group" "sg_selenium_grid" {
     protocol    = "tcp"
     # You should restrict this to your own IP
     # If creating internally, restrict it to your own range
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.your_ip_addresses
     description = "Change this to your own IP"
   }
 
