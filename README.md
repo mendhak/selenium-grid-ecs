@@ -1,5 +1,6 @@
 # Selenium Grid in ECS using Fargate Spot Containers
 
+
 Replace the variables at the top of main.tf: the VPC ID, private subnets and public subnets.
 
 Then run `terraform apply`
@@ -21,3 +22,7 @@ npx smashtest --test-server=http://your-load-balancer-12345.eu-west-1.elb.amazon
 ## Destroy
 
 Run `terraform destroy` to tear down the infrastructure created here.  
+
+## Details
+
+More info available in the [writeup](https://code.mendhak.com/selenium-grid-ecs/)
