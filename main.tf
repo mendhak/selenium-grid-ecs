@@ -269,6 +269,8 @@ resource "aws_lb_listener" "selenium-hub" {
 
 ## Definition for Firefox container
 
+## Try .Containers[0] in the `command` below if there are problems with the nodes registering with the hub
+
 resource "aws_ecs_task_definition" "firefox" {
   family                = "seleniumfirefox"
   network_mode = "awsvpc"
@@ -357,6 +359,8 @@ resource "aws_ecs_service" "firefox" {
 
 
 ## Definition for Chrome container
+
+## Try .Containers[0] in the `command` below if there are problems with the nodes registering with the hub
 
 resource "aws_ecs_task_definition" "chrome" {
   family                = "seleniumchrome"
